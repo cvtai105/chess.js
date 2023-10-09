@@ -1,0 +1,132 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#board-container {
+    display: grid;
+    grid-template-columns: 1fr 640px 1fr;
+}
+
+.turn-block {
+    border: 1px solid black;
+    font-size: 3rem;
+    margin: auto;
+    padding: 10px;
+    background-color:cadetblue;
+    color: white;
+}
+
+
+#board {
+    order:1;
+    display: flex;
+    flex-direction: column;
+    border: 2px black solid;
+}
+
+
+.square {
+    width: 80px;    
+    height: 80px;
+    position: relative;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+.chess {
+    position: absolute;
+    width: 80px;
+    z-index: 2;
+    cursor: grab;
+}
+.row {
+    display: flex;
+}
+
+/* .brown {
+    background-color: #b58863;
+    color: #f0d9b5; 
+} */
+
+.row:nth-of-type(odd) .square:nth-last-of-type(odd){
+    background-color: #f0d9b5;
+    color: #b58863;
+}
+
+.row:nth-of-type(odd) .square:nth-last-of-type(even){
+    background-color: #b58863;
+    color: #f0d9b5; 
+}
+.row:nth-of-type(even) .square:nth-last-of-type(odd){
+    background-color: #b58863;
+    color: #f0d9b5; 
+}
+.row:nth-of-type(even) .square:nth-last-of-type(even){
+    background-color: #f0d9b5;
+    color: #b58863;
+}
+
+/* .gray {
+    background-color: #f0d9b5;
+    color: #b58863;
+} */
+
+.notation {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    position: absolute;
+}
+
+.alpha {
+    bottom: 1px;
+    right: 3px;
+}
+  
+.numeric {
+    top: 3px;
+    left: 2px;
+}
+  
+.controlBtn-container {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    font-family: sans-serif;
+    line-height: 1.15;
+    text-transform: none;
+    background: #2ba6cb;
+    border-radius: 3px;
+    border: 1px solid #1e728c;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 15px;
+    outline: none;
+    padding: 10px 15px;
+    text-align: center;
+    width: 100px;
+}
+
+button:active {
+    background: #1e728c;
+}
+
+.highlight {
+    box-shadow: inset 0 0 5px 5px yellow;
+}
+
+
+.blur-circle {
+    width: 30%;
+    height: 30%;
+    background-color: rgba(0, 0, 0, 0.15);
+    border-radius: 50%;
+    display: none;
+    z-index: 3;
+
+}
